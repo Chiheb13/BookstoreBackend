@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('pages');
             $table->string('language');
             $table->string('price');
             $table->string('type');
             $table->string('publisher');
-            $table->string('code')->unique();
+            $table->string('status');
             $table->timestamps();
         });
     }
