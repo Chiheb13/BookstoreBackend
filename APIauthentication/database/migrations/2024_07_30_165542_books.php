@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('type');
             $table->string('publisher');
             $table->string('status');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->uponUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

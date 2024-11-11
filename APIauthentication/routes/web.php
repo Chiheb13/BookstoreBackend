@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +25,10 @@ Route::controller(AdminController::class)->group(function() {
     Route::post('/createbook', 'createbook')->name('createbook');
 
     
+});
+Route::controller(BookController::class)->group(function () {
+    Route::get('/getallbook', 'getallbooks')->name('getallbook');
+});
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('/getallcategory', 'getallcategory')->name('getallcategory');
 });
