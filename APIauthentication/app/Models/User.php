@@ -49,4 +49,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Book::class, 'book_user')->withPivot('current_date','last_date');
     }
+    public function orders()
+{
+    return $this->hasMany(Order::class);
+}
 }
